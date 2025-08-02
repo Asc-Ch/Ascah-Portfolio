@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://res.cloudinary.com/dtmiaphih/image/upload/v1753632769/electric-power_hkvvyb.gif" type="image/gif">
+    <title>Ascah's | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #720c04;
+            --secondary-color: #ecf00b;
+            --dark-color: #2a2a72;
+            --light-color: #f8f9fa;
+            --accent-color: #f34d6e;
+            --text-color: #0c0c0c;
+            --text-light: #fcfbfb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: url(https://res.cloudinary.com/dtmiaphih/image/upload/v1753621450/bg2_bsc3rk.jpg);
+            scroll-behavior: smooth;
+            padding-top: 80px; /* Added padding to prevent header overlap */
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 80px; /* Fixed header height */
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%; /* Ensure nav takes full header height */
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        /* CSS-only Mobile Menu */
+        #hamburger-toggle {
+            display: none;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: calc(100vh - 80px); /* Adjusted for header height */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0; /* Remove any default margin */
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+            padding-top: 0; /* Ensure no extra padding */
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .hero-image img {
+            transform: translateY(-120px); 
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        .hero p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(108, 99, 255, 0.1);
+        }
+        
+        .shape-1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -200px;
+        }
+        
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            right: 100px;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 10%;
+            bottom: 0;
+            height: 50%;
+            z-index: 1;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .skills {
+            margin-top: 2rem;
+        }
+        
+        .skills h4 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-item i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Education Section */
+        .education {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .timeline-content p {
+            color: var(--text-color);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            top: 30px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .download-cv {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .hidden-pdf {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Interests Section */
+        .interests-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .interest-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .interest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .interest-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .interest-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .interest-card p {
+            color: var(--text-color);
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 220px;
+            background-size: cover;
+            background-position: top center;
+            position: relative;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.02);
+        }
+        
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .project-card:hover .project-image::before {
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .project-info p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        .project-links a i {
+            margin-right: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 0.3rem;
+            color: var(--dark-color);
+        }
+        
+        .contact-text p {
+            color: var(--text-light);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .footer-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                max-width: 500px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 2rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* CSS-only mobile menu */
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+                z-index: 1000;
+            }
+            
+            #hamburger-toggle:checked ~ .nav-links {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .hero {
+                text-align: center;
+                padding-top: 100px;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+                left: 21px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+            
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+   <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="https://res.cloudinary.com/dtmiaphih/image/upload/v1753624752/logo_optimized_ngmalg.png" width="200" height="70" alt="Ascah Chepkwony">
+            </a>
+            
+            <!-- Menu toggle -->
+            <input type="checkbox" id="hamburger-toggle" class="hamburger-checkbox">
+            <label for="hamburger-toggle" class="hamburger">
+                <i class="fas fa-bars"></i>
+            </label>
+            
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hola!, I'm Ascah Chepkwony</h1>
+            <h2>A Passionate Software Engineer</h2>
+            <p>I create beautiful, functional, and user-friendly digital experiences. With a strong foundation in:</p>
+            <ul>
+                <li><b>Languages & Frameworks:</b> HTML5, CSS3, JavaScript (ES6+), React.js, Tailwind CSS</li>
+                <li><b>UI/UX & Tools:</b> Figma, Adobe XD, Wireframing & Prototyping, Responsive Web Design</li>
+                <li><b>Version Control & Deployment:</b> Git, GitHub, Netlify, Vercel</li>
+                <li><b>Other:</b> RESTful APIs, Web Performance Optimization, SEO Best Practices</li>
+            </ul>
+            <p>I bring ideas to life through code.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="hero-image">
+            <img src="https://res.cloudinary.com/dtmiaphih/image/upload/v1753629338/image_t4ofbf.png" alt="Ascah Chepkwony">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://res.cloudinary.com/dtmiaphih/image/upload/v1753621448/bg4_ghfcgy.jpg" alt="Ascah">
+            </div>
+            <div class="about-text">
+                <h3>Who Am I?</h3>
+                <p>I'm a Software Engineer based in Kenya. With 5 years of experience in the field, I've developed a passion for building solution to real-world problems. My journey in tech began during my computer science classes in university, where I discovered the power of programming to create meaningful solutions. From writing my first 'Hello World' program to developing full-stack applications, I've been hooked ever since.</p>
+                <p>What drives me is the challenge of breaking down complex problems into elegant, functional solutions. I believe in <i>Code for clarity, not for cleverness</i>. I Prioritize maintainable, readable code over unnecessary complexity. When I'm not coding, you can find me trying my hand in poetry.</p>
+                <div class="skills">
+                    <h4>My Skills</h4>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i> HTML5
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i> CSS3
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i> JavaScript
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i> Python
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i> React
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i> SQL
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="section-title">
+            <h2>Education & Background</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Master's Degree</h3>
+                    <h4>University of Oxford, UK | Expected 2028</h4>
+                    <p>Field of Study: Computer Science</p>
+                    <p>Specialization: Web Technologies and Software Systems</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Bachelor's Degree</h3>
+                    <h4>University of Nairobi | 2015 - 2018</h4>
+                    <p>Field of Study: Information Technology</p>
+                    <p>Graduated with First Class Honors</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>High School</h3>
+                    <h4>Kenya High School | 2011 - 2014</h4>
+                    <p>Achievements: KCSE-A plain</p>
+                </div>
+            </div>
+        </div>
+        <div class="download-cv">
+            
+            <a href="data:application/pdf;base64,JVBERi0xLjMNCiWhs8XXDQozIDAgb2JqDQo8PC9SZXNvdXJjZXMgMiAwIFIgL1R5cGUvUGFnZS9QYXJlbnQgMSAwIFIgL0NvbnRlbnRzIDQgMCBSID4+DQplbmRvYmoNCjQgMCBvYmoNCjw8L0xlbmd0aCAyMjE2L0ZpbHRlci9GbGF0ZURlY29kZT4+c3RyZWFtDQp4nM1bXXfaOBrevc2v0NWs2YJqWbJl52oTQpp+pM0EOttzpnNhjAAlxmZsE8qc/fErf4BeGndPW2CPTk5BsoX96tH7+Uj98+xydGaj8i+bIVL93b9CNnY5WqOX1w4iBI2mqB5Cqs/RQt34NHDQLFc97vjYox4aXf1uoc4fozdng9HZr2d/fuPB6A36/Q/1NVH/HrbvITa63XvZKCo/1l+/Vn1k6OW9iMNCPol+GqeZXIgikxHKpBomK8GoqYIxUwVzTRXMM1UwbqpgvqmCBaYKpp5mqmTEWMmO7/zVGG9fMvJTkpWCOQH2fA/5xMHEJ5V0F3mnZ2Pbth3qW1Fn1wznqD8Xzb3AZdbycZ0mG9RD/d8OnpBz5Alx38U2rSd0l6XTRmxKfEt0ds1mpo7LqJXLNAlBP0bD1WIRZhs9t920vpoN2U5l93KGCXMRoeppjKnZOi51qIsycTb9Zw3R/0ogjoeC6+GgWda7sJk342reuimrNrGZleqrSQOE7ROrAcX2AmYVav1pgLkTKCXuMTUxTq0hGJxOi3WYdXY/2I7nu/GONajfSH31nplsXlV1hchaxq9lMW+57L5QbR7gIAisjQizvGVMPSXXZYE1bW7T7W1PSfdl2Si0r9bHyqRIoq3EPnhMKeSzi2sxbrk6EU8iTpcLkRR4K59vDdSLskLm3/3wm9FtKTohdsCtd7rp6ma3krxuqx/6Zcex+npAsy7V7Ie0e2x3eLh2Apf4Jtyp4RPQt63ulTo5jIBeySXUSjM8fTk1n2NO2Gnj0M8D3yLdZ2sw9IAJvgC4fu4cXWl+HllCiTIlx1Ro28S7F2FU4AeAbm4SoD7BzDMX0BbxwmRiDn6O7WEWmApfi3RZE+sY8YiVL9MkVw8xCE/Pw9R1jQW0RbyJUOmTzh9mTSLEObMSbA6y1PaVLhirqm3iDYuOTssAxGkyMwhXxrHrG6uxbeKNw+hxlgE9TUGSuDLJvTJCMDc2k2qRTuXx5oDnqMKP+8ai1yJelAn1wwSopkGWzriDubmW3ibeKhdZD3jOKXCoMGiJRNfIE108xvrqxpx1cFWhHHDP1HVoE2+igayoFuJ5zLNmsgh1LzZoCp6PuW2s59hSB7aNnaAmtsSXpSauBOQINM8kYGYWwV6OVFGB8jR+kskMwcgIR4Vxb51m8QQts3Qci0WOirle1yxdzeYgjqIonYgD878TcKIeJ9hjNWiDiWZBV5Fu78g+6llFZ9eUafLjNKjHbcxVxuz6pa/5ThaUHF9ZlIVh1nDBtyHgPgvIU27pp+wfsF5HMkF9PSwF7MhCX4Zk1EpfLqA21YpZtdFQtyMwpqIf0eeKLYwKMVFFnHbajv+5c5hK0RNA61DMvRraj4nU0D4J3QYmmQOgZLFBEM8p+gCI5C/TNAM3J10A38e3hwHx6SRaZhNsN1z73/5ujsd06TPxhtBhRnoDAOwQxPKvENhBIVPQg5T9Ofq3GCO9OCOo89Ec5nNKypkUOfoFDettAgF+N9zkhfaoYgHcaX6wJz32WrtcVax2DeblUKMW6SYCzPVroMjJNNXmkLW7k7CAZgLGJ+A6Gn3tvSpeJ4KBKIHVnUJ/o5yLYxO3pz5MdCeu62LuHMudvAeISgh1OpYGOhCXUmy7xjoQKN41WJosL4A7aNS+9Cb9GO4c5jm6SYF/T/bcu4EmTmxMeT3dtyLZAF0Clo1u5EzfmUPzHIJOBO+k7elErGwTAKkslAC6trRYdqjFnkRtmc+xFxirtlC8t32ttsPBOboAwQnd6WXZU1wJ3a9pKT3zCPabqD4SkU7Y57tQUWbvEehsw3pg8/KMw6OM4wOt7wT1HWMBpgGr5tWDofQ6S0EvAbm8gM4FZo7g+jm6GYFbt3pp37ldpINofzjUuQjtwtLuTfgUDqNMLosuavb3cj22fkjNoIxCGYMt+rVUdWb5YOOwdrxqV/gZ1pehxid6FAA4eDxkAq6fKyvSLmxTzNOki96XxfBDDmxNITcYjqarGF3cvTZQ+WyGFQDPAbnS6rZL0aqOxmn8/PBCXUgK2DlHoAcDxa/vuug2TWbp1aVxsFCfYOq1wDJKQUiLd9VEDoac6wHolVSmoz5uVuPG5ioYrmEhPFtA8mVPdS4m6VigT1fm4eP66rsFnw+gDTP7+Q4qAUZknVbU7qH95Ut45Krex9Up2JXI5d5WZBd9fP3y4yd0l8kkkstYHJ5uHTuQUepgn7Pteb2HHSLE31IkVcSqa8Sqmf84I0XLQxq+jxjH1HUaRspm/3dGitoqKWlMadDTC97XZ/EWC7jgMFeOgO+AXqUsxGFptLsh93go4+zG8ZlalBqMy5UGA9QY2qlsaw3VhCa2Bj8r5hCUewgR9MhRUYUmzUCUQUp5X0hYmOmIHc/B1K4BuxYg+MCYtIKHMPP9wAxupZNVVKBY5jr5KWQyU0CApCcKswJNV0lUlGdkY1Vpd1EuolVD4NT5TQR+MBfRY7o68FjeCezOoeq7ieyjLRNcwvAIazrQBhkirAkSGJJAAbilrepO8nxlKleuVe5iCZ6zNE/RiIcDt4brSmw5mP0oDw4NL7/hmCbQHsvDvOg3yJeD0IV18yFHvwDKdy87yMQ4zM1zZCRg2OE/aJdXWTjrAS1LJj0I3d5RjSXa2x8vRDYNI9FV4SuMe4WSDq2WesNgEhbAuZkX8onnY9YEwX66LeVUvN8ZS1Wt7pr7acAPx37icTUjFftZFXq/L/afQksYVa+upx2BFHC5az6uv0W2b/ZKiiic/wsY0kyv9l72LGMMU4Z0YZ7hOOUrakheKGxA2gssh9s25GsoAz0HeQrS/6AXjCHHRjxwKHLdwLiZBhz7Da3xPoQkKuQEt3owBklNF70FKf+3avFNqDD48GWq3WgKHcike/DW2Un+kwp2GvrhlYSu8kbPfzWGtdBsj/aH3OpqjKMU7KS8vMijXn+u5/xfJAYb4Q0KZW5kc3RyZWFtDQplbmRvYmoNCjExIDAgb2JqDQo8PC9PcGVuQWN0aW9uWyAzIDAgUiAvRml0SCBudWxsXS9QYWdlcyAxIDAgUiAvTmFtZXM8PC9QYWdlcyAxNCAwIFIgL1RlbXBsYXRlcyAxMyAwIFIgPj4vUGFnZUxheW91dC9PbmVDb2x1bW4vVHlwZS9DYXRhbG9nPj4NCmVuZG9iag0KMTggMCBvYmoNCjw8L0xlbmd0aCAyMjYvRmlsdGVyL0ZsYXRlRGVjb2RlPj5zdHJlYW0NCnicXZDLjoMwDEX3fIWX7aIKdNEVQhoxGolFHxraDwiJoZEGJzJhwd9PCA+Nxgtbtu+JbizK6rMi40E82KoaPbSGNONgR1YIDXaGIMnOoI3yWxuL6qWDRAS+ngaPfUWthTwX32E5eJ7g8KFtg0cQd9bIhjo4VBrJGz+FYT0694N96CEtCtDYzo9dpbvJHkFE9rTpT6+y/iN5Tg7hvAyyxZSyGgcnFbKkDiHJ0xAF5F8hCkiQ9H/FCjatektegGwG0ku5ANtmZuNfd3dqZA7G4kmiodmKIdzP5qyL3Jp+AbAqc8UNCmVuZHN0cmVhbQ0KZW5kb2JqDQoyMSAwIG9iag0KPDwvTGVuZ3RoIDU0ODcvRmlsdGVyL0ZsYXRlRGVjb2RlPj5zdHJlYW0NCnic1TprdBzVed+d2d1ZPWzLT1yLwIjFrrFXkmXz8CtGth6xrUDkB1jiUTS7M6udaHZnmdmVLJJyRCEJkU2rFienSQmYxCbm4WSEITEc2uOSQN2TFJpzSE9SCGlOnRNOinOS0zgkabH63e/e2Yctc9L+q67vfN+995vvfu97RzIwAJgDE6BC/7Aznnn61O3HceYt7IfSOaNw+FeN5wFYAcfJrGWYm3/0yM9x/AiOr8/iRFA3fz6O38Dx1dlccX8r/K4Ox7/Fcdxx08YK2Imogh1iOWN/YVVsFHdU4jjW80bO0v/6yBSOVwJcvv1je9rXHvj319oAruD73Vpw/aIJm2ZwfJrTp0eL+tPH25fj+B2A6MZMYTj339e+dw9ufTVA5K6CZxU+t+of5wGsfABA3YvbTiCciJ5G7TRIdM7T3mCRN9hXkHgGojPqC+ynAO3nzzadhRt/gc+ONevmt8xf3jK/ZUKF9ycUOA/R079fPxHB7Rkch0PRm6PXQgMs+ltQlYNQBzH2X8jgLP7rWLPwWli3FhYvgsRVcJzdfu4cu+P8kXPnzh9Vzpxjt58/ylF2O3BOKnCrN0IEdIQRbDj+pTMzI57zPkfrQM+o8her3j9y113zNp+LN8dp+ujxh89z+Mbb768GON9f/2Otg/iJt+g9reN8P0DDQYCZ1+t/XF4Jf5QIwET0d8B9LVzEKRTWCO3wEMxFyzUhtgGn343chWt8dTl7ucxnrXyDP+twJHAFrbxJ4io0wzaJR6pooijnnRKPwXywJa6hr+6ReBwWwe8lXh99hs2VeAOsjb0o8Tns27F3cReIxHDfxnhAuMYlj79EOMYhmPHvSpzBgro1Eldgbt02iatwfV2/xCNVNFFYWvdpicfgqrpHJa6hwqckHoeV9SFe3zBQ/47EG8Bc0inxOeqDS44QXs/lXJYkvIHLuWw94Y1V801ctmXbCV+I+IJltxK+qIqmmd7NEv6hqvmr6d39HI8vqcw3yn2f1NeuWXO9fpOd9lzfzRT1LtcruJ5RtN18m77VcfTd9nC26Ou7Ld/yRi2zbZ+dHzax+7ut4ZJjeOWxLic26jft2Uhsb7U8H/no17Wt6SiTtV70nu3rll3MWp5u6J41bPtFy7NMvegZppUzvBHd5StVw8zs8up2Xkc2+i15u4jv7ykaRcvXjbzZjgxc2iDtlvJFz7b8tioWe8cL7rBnFLLje/HtilwZN4+Kj6Ewumn59nAemabG9T4PBd7uOjnBXO/KGp6D+DZ72HLcMS5Fx4YNa2gNkY42fU79nHrOuoqh69nDdt5wnHEqeKb+0VLaNg19R9rN+0l9q+e5Ywg5D9TD8/Wii8LnCo6Vs/JFUlO+UbT2F4mznjFyNvJDEfmyz+uolNtDfXdbtFESTex6w0bevocP+Aae5ViGjzIIydfqhl9lnbI9ksS2mPWsUJOC547apoXOQRPk3LztlnwUoGws3ypyZ9lcJ9wFK7GPwiMv4oTq4DuklZu3OD+kLaCsLtqFpksYCLo/jvGQE6bmr1nCBERNXrPTSF7C6ET58YWMkebulTZHUxvYhQgZjIP+rqTORS26XlIfscZTruGZfAo5JHmQpUdS6JYkV8nUTc8exWnT9kesYpETGAWU3PB9MSx4tGcSbb8/qVvFdFuSW2/MwsRBWNk2Yzvcao6J+iE/N10iJXBjw3bEM+Xut3BizM6b5Pu0YxekdFz3MQPtkDK4IG36jrxumKbNoz5ZFbF2Pu2U0Pxy4zHMKj2FkU/JQ9RoKs6sYl30lJ1BE+bTqI5fSmdJfs8WbnJdR1g+iw+fx47Bd9KHHW4CKWSBz/hp2/ddrlzK4uZLubkULmet9IguNasyTM5Fp1QLZeeMYZS7LIBlUL5y8WhbB9MFXYTRkEuhTJxZ0XMdd5i8L8msfNr20g5GXh7N6xlEh1HoWGmqDxgxRo5HGFeG1CLveW7KoPguOLgDUmN2YDZhLiMpkSFewqzPhoHV79oijgUPE4UQQ9Qq41l3l3iOZkp52pa7pSpSK0GK9nb5WuhJnuMGOg0zqkbmQribdEJxliqFurpIm+FFlGoHZ5xGeTIlh29uGkIUZDdm8YpOops2f4MLa9qeJaXlC35x3OHK9mLojhpYMIvjQtdcwUgXuYdSJcexisIRFtpmRFYr1+NlhkJ7H7cMF7EiHOKCX7k4DFtuzsKSnNaF77hV7i6h4NwfrjM+TPUQS+Cw2I2Ew4LYli0WCxvb28fGxtpyYbFqw7huL3olFLdgtZNl2sdCS7VXappfKhQcLgQnadMH3RJm4DgvImhcW9iUKi7Ge1Hkf8ExxsX2lPOYQejHPJkCIypnF4vidODOcey0lee8cMHnp5dEMjoVGYScqiIO1lGzlC6i5njE2jwRXa+8AfpxDCMnWyXZmFFOdbMivZvH2rvSvka3cil+fJbJeSR8gLRETlmNRueeCINWbCBOVclrE1lgpY27YFHmB6/HjxwsWHnHNcxa6xlhedTL569bKmLdwROCq8lpspZTqLUo3jry45KcO8SmcyZrp/ih3gZ5cMGDHBjgwB4oIsyDiU8Pn0/izXktrMF2PWI34S0yjfMu+NgzSKtDF71doKeBMzZieWjDla3Iz0G4G+eGIYtrPo0shBZSj+LTRMp9uJ5HClNCn2iGoYRvcykuXtcvoNhIsu0hGEp7K+3hS3l0uA53WgMds3Br/QP2s+lpISyiJpyzjrQ6Qv4mXy3SLNdIR5zbwsRRjjiO4Jxbfmf21cz/yr46yaZLaXS4BUc2ycD3F14skqV16c92KYFbpUEaRyVc5RLZRN12CSn2wjjJMExSFJDDOM6JvWezV4akFB4fk5bRSWefoiEvJU0hHx36aH9Oux3fc9Au1ZJzG2TJUo6c30Y8LBy7yD20RQd+R21AH1feEzMdpNUcqKceSj27hC5JMkwcDYpfLh/Hc1Lij6LF0rhuki93kA3zyCVJEe+R3cbkOJRD+MOjvYq4LiyfQzs6FAUWSVLxZu0e3I/7aT2UmWNcIlvKJ6wYvu1LaS+0tyf9u5v2CzVKyijmmg+TxDZ+H4YroQYeWdvCsS/tUG3ztUTpXyJ2Lo6PZJW0HHLuF/qkQFxGyQqWzBwRBTmisil2fWmBiyOLy1ksZ5Zd9pPQpUBPX1peyFWRSXgnJzMt9JVLvEP5BN+CtKsr46VCXZIVgUsyLutDriaqw92smiio8K7kGpdecC/J2insL3bgsZAuZ29tnHvSdgJWWyEj60E/Zhf3R2jVIs3zmRF8Zxxjy5VnQUglZEiWK1kaKVMyW5JlL5nkFZ5No5LapBwfIb8UyxwMsqFOGvrSa+Fqgd4P9UzKuN9PGKdLo8bJcuyNkSWd8ng2bTOUM2GsORQ3noxIE2fSqF3FE0Jjg96pxrlN9pPFk7SvTR6t5H0aaWyUvtZ2od/HSD6uU4owYZE2qiZ5ojPJVmGtT16ixnKM71SS0V+r8Zg8q3SSQmDhyVPhbUh7Cclmi12RUzZZLk2Uaekdn6pUtsr+nuQcZpNLNq6O+azE/HLdMco68Yh3ylFQa8lCmcanyuhTzoWeS0nPJ6W2OXyKt3kOpOmErfXZ7BGTI57WB1jKphgYlva+2AIWnbvZC6xX0daRp4vIIlEbciSbUyVZkWqfQ+dtJfdruVnkCRsp0xTRJp1TIno9eiPkJ2qhQ5ao3B9EjTHI3yIHQs9UvFXJPS5PiubD+l2gyPPL9UucHeJsEueyJU+8kJuYL8mzPntRxerHVbumHlfLYUpLVK96MpM5vBs5W2UJSmSdUNswW2avqbNVUhHfbvm9C3MyPMcNmWmmPHkvZefCRbrVZkLxD7xLCb+6km+mfBOt3DtCidPSPhm614aam1V3yMpJM0Y3W3FHr1jdpKzPyFNEWNakiLMusG34Bo/ccXlL457tlVV3lGSxqc6N1/iVR59B3MIcSpG8DtFWZ4Ql42bkgrsV3yG8zVSq9r5yzIRWnM1yvvRgRb6Lbw7DdDfK0ZxHUaPX5F0YKzz+DHmrSEqP87vJcNX9UNwCh2t0q1jOkDe0LJ2ABfyaacc2Rq2Nbnu1N6s2Wa/bSbKStC7P5vaqmGmX51N1TLXPek/j1axAeR1aIuTCfTlIuSvOQO5DcQsQkWvXxGnljuvJelh9/heoxo/XaF8553V5ghXLEWfI26BFNz9b3g4q3w5h5jikkUW2FnKJN3wIv71qZzJlHZLlcchrNuuI+6hJFb8ofS6+Yu3yieiWv6qqNRD5OCZrTvYSNhsr31qqT3VzVtvzd8S9dyXSX0M1OEenoHkJ7mFN+L/ZtsK9claLSA9z4sJKW61B9bdqrVybqmKAayJ0ETfl8IvXK3/liBtWnk4R45KaVupy7e0x9E71969LNx1x3xHfEKE3Qz5ZquiFD4xR8buOvPRMhXuYIXbV9wyXNwXhl3ob3AyV371UcIOiuXrNqvnNjLhThus/wXX+ZXIzzo+SZfhvdJh2BZuCKMQjr0VeA1CXhBBMVW/EhUv93LRH16Hzl/ovZ2Kr2RHo0DpYMFFZVgWYWY/7/H/4+d4lVzqwpdmAcp9yG2J/g37pgC9iN7F/AQ7BIeWEoIF12APEdsLPoqfxa9ej+XXwSXx2w2/ZMfg0zWyGFK6nkPoVhFtwLY2QEY9D7CDBP4UHkPevlBPKy8rLtHoj8t3JKURTTkRP4zzndz98Dd5mp5DmE/Awrr0A3+NvIedDcBzeYyuxHWA/ZWeVfoX/zXgz7T2C1IdQ3r+DH8J/skVsC5tkLyHNAuU+kkXsNoE0r2D7HnHh7SbmMJd57LPI84yiKtchV1d5UDmsBMrL6mBkS/R0bEHsBs2hv1MrGAnzUUPO7WaMzhS2u8tcRftnprBdbC/Lss+zwyjDK+wstl8rrcqNaHXePqcORRoj70RHol/Gdjp2i/alOP87cxRisAyzZjlci1r14B67UGYTPg73UPsEtk+iLf8MHoPD8Dg8CdPwIvw93xPehLfhPbTOPGxcrxvYBrYP2yA2j93LHkB7HKhqD7FH2An2Isr3HfZ95UrUWjQHtRdS3q98UXlO+Y7yXeXHyhnl58qvVFDr1LvUlOqrR9Wn1NfV1yPbI4cjj0feirwVZdGALLUgtih2Z+wAtoNanTaiPaD9pfYl7Rv1bXAZ6pVEvXbiPSWNdeOT2B6ESfLaNLbn4Hlsp+HnXA9sM1IT3jawbtbLbsE2yG5jQyzHfLa/rNER9gQ7xp5DXb6P7QfsTfYT9h/sF9TeU2LKEmV1Wb9+ZY+yTxlRPq98QXlEeRoj8oTykvID5W3U8YxyDnVsUBeoi9Ur1B61F9te9XZ1v3q/elx9WX1TPYt+a4x8OLIlckvkTtT91ciZyDvoSSWqRpdHr4tuxJaN5qP3Rg9EH8WIPhs9G2skqyyILYxtin0m9ljsROyHsfe1xdoS7SpsbVqHtkdztFHtKe2M9rP4M3Vb6+w6rz4JT8Ea+OYF2fs8Rve3lDtj7bCMvYnRcLc6j373h7mnNGpOna2c4NJpe9hK9NSP4D21Dvoir8I+9XZwoim1QXsXjjE/ch97Wu2FZ+CoNspeUofUs+rR6PLYJmFP5YvqU9q4NqT9DCX9tfpwNKu1sa3RA+yYciNmtMd2wW/YOfgT3LmorIJX4bPwIBuFOByKP8PmYK69olzJDkS/rD4bOaz2RO9l16AHm6On1U/BdbAYGvHUuwpjPQqLeEHuvGH9DdeuW9uxpr2tNbl61TUr/3jF8qsTV7XoV17xocubl/3R0suWLF60cMH8pnlz5zQ21NfFtVg0oioMkj2J3iE9WDEURFYktm9v5eOEgRNG1cRQoONUby1NoA8RmV5L2YmUmQsoOwVlZ5mSNembYXNrUu9J6ME/dSf0k+y2XQOIP9SdGNSDs4TfRHhkBQ3m4KClBd/Qe5Zmu/WADek9Qe9odrJnqBv5TTfUdyW6rPrWJEzXNyDagFjQmyhMs94tjBClt2fjtALxOShVsDPR3RPsSHRzEQJ1eY9hBv27Bnq6m1taBluTAetKJ1IBJLYF81YTCXTRNkGsK9BoG93m6sABfTp5avLgySZIDa1uNBOmccdAoBqDfI/5q4OPJLqDj9xzZmlr8iR7Yu9AUNd1ksHegRdg58zE9I6J7u5BvtuCroHPEPllSH7ZPWea1cmepbbOh5OTn9GDw7sGqldb+HNwEJm2Jvt2D7Sg1ImegzpXY/cAaYBM2dJ2FJLPcTWFwlaih88MfVwP6hLbEtnJjw+hs5ZNBrB7vOXZZTs7X5j5N9jZo0/uHUi0BDc2JwaN7sunF8Hk7vETOzr1HbUrrcnppvnC0tNz50mkcU41YpXXCCNyjqHUoakZlyixA0Mk0NM6SjKQCJTl6/nDWg+T6fVIhj+DDC1qo/2GJps2ckdElzcl9MlzgIGQOPtu7YwhZ2LLm84BR3m4lEMO10M8WL06WLWKR4rWha5FybbQ+LrW5GjQlyg06UEfmgz6B/ClwY3taPKWFu7lAyc7IYWDYGLXgBjjvbf5WehsXz0YKEN85VS4svgWvjIRrpRfH0pgOD9H/1VqcRBfUf43r2nJwp7sxoAt+YBlS6xj+vTo05Ho8sn+gRXG5IHmFUOTBwfRNb2YipOTvQm9d3Jo0jg5M5FK6E2Jyem+vslCz1Co0smZUweag86Dg1mGRg3WCWsEC7sG1GZlUGBKszrYCp2N0NuLoiyYH+/crp9Urn92+1oE9xNgzwjwtABPCnBMgK8K8BUBHhfgMQF2CLBdgI8IsE2ATgG2CLBZgA0CxASICKAKwDo/hvAt7G9i/1fs/4L9W9i/gf157F/Hfhz7M9iPYf8q9sewP4r9S9gPYr8fexr7XcTz64L1cQGeEuAJAY4KcESARwXoFmCrAB8WYL0AmgBRARQBoLMT4Q+xfx/7aez/gP1V7K9g/yb257CfwP417Iex/xX2cezm9rWL6hbV3TB1ko127tCmHtemHtamHtKmXG3K0aYy2pSlTd2hTd2mTQ1qUwPa1fGr4nr8ivjl8WXxpfEl8UXxBfGm+Nx4Y7w+Ho/H4pG4EsfjJ1io9il9e7axvuBUGvpSevCbPYmTrH7XbUE0sY0FC/qgb++2pcH61YHyIFWzk2xmmrE//1QzL2QvAGMzn3qoWcLBQViy+uKfpTWjvv7xl+BKdgNo+Fx3Qrvy2xqf3YOzUzQ7xWenaHYpe7Yf1vYZB4Y+BLMwrvywD1ytoeyxubr9A9Nx2DbYdYeAJ5SGetRnqLllcNuSpsIWUm5Ty9J7m1+MAF7bGzCfG/GAmIOdL7Vubd3KlyJAS3P52SGXlt67qaX5RXZMLjXh9Hw05f8ATmBIxw0KZW5kc3RyZWFtDQplbmRvYmoNCjIyIDAgb2JqDQo8PC9MZW5ndGggOS9GaWx0ZXIvRmxhdGVEZWNvZGU+PnN0cmVhbQ0KeJw7AAAAwQDBDQplbmRzdHJlYW0NCmVuZG9iag0KMzUgMCBvYmoNCjw8L1R5cGUgL09ialN0bSAvTiAyNC9GaXJzdCAxNzMvTGVuZ3RoIDc2MS9GaWx0ZXIgL0ZsYXRlRGVjb2RlPj5zdHJlYW0NCnic7VRtb9owEP4r961FFTi28+JUCInXNZpoUWFrpaofTGLSbCHOEjOVf79zaKDbtGmq9rFCcJx99/i5x3em4AAD34cAuBuAAJe5EIIb+kAd8AI0uB0GQDkEngvURSOABhD4DGgIQghgDgZzDxjHaBYAQlAmXGAeprkUGKLwEOMQxvUwDgE8xGUhWj8Ejvk+BnGKVnDgiBy4DnDEC0LLDKjAw/t9MldJJkf6+QF5I7/Q6yGYcGlPhI9ktS8VWchU1eRjltQPwDHmFh7JWO8KA3QwQIT7m/UXFZt+fzAg02fzYWmkUbg+u59yy9xmWKeh3zqoBZJrPc9WdNyilm/r+bbI4xazJbReYOtuHWGLb51GgWOSVbx1mNXUOkh2Uel4qcwDWUxmZKWeDYm2WOvoYMYHEz2SmS6MrYdCy4TB8WBcpe0yh/AFuxFmJGtlc8mVyr8rk8WyO9J5QqZFrJOsSMldVgyLOjv6jdxNxnK3NtaxK/QPYP8Lp3uzzrNvO/U2vLlOJnjf55NL5jDPEQ5jzKHUv3D4meOcdazKyS5W1fliP0OhgfaCHoMnY8pLQsr9pkw2vVTrNFd4murFeks6ZFwpaTJd/AJNBeOe32kOXt0yMlEbucsNGc3Jta62MifDaAkbmdeKjIdASSzxZzmX9VcMKJRNbL8nJYaj8WQ6u8CqU1tu3b1V6S6XFVnpT0VmWeG0HK74KEmUqMJkZt+9QhJ1rIpEFsai4ZDQ8GVKXqvlnFT8x9PH0WSlP0STuSyPx5E7hMdP4PoneAy0SBafvborXF7ua6O2UbHRduQPTYpblnGVlUZX9qU5dCxSiozMs3hY4FWA06QrA4yd8mZZrnCA2rnNZVqD2+yMXl6QLqNODx8f7gk0IsRffCxkeaWy9Mkg6kEs0wSS4eE/hjUg13Kr/nIZbWEn9mSJ1X1GivS3jjj1wak3mmZo2uLnjnhPfE98Y+JNlagK2/S8HdAOTmVZ5mprG9sh2LxZbar9+TDRa4UP1w8zsWTpDQplbmRzdHJlYW0NCmVuZG9iag0KMzYgMCBvYmoNCjw8L1R5cGUgL1hSZWYvV1sxIDQgMl0vSW5kZXhbMCAzN10vU2l6ZSAzNy9GaWx0ZXIgL0ZsYXRlRGVjb2RlL0RlY29kZVBhcm1zPDwvQ29sdW1ucyA3L1ByZWRpY3RvciAxMj4+L0xlbmd0aCAxMjIvUm9vdCAxMSAwIFIgL0luZm8gMTAgMCBSIC9JRFs8NDEwRDhCQkVBRjgxQ0VCOUQ0NzdGMUYzQUZFQjVBNTc+PEE3NURGN0I0RTNBRThERUJBNDNBQkU5NTU5NTVGRjQ5Pl0+PnN0cmVhbQ0KeJxjYgCB//+ZmICUMiMjE5jPwMj0H0i+Y/gP5gcwMID584E0RJ4Boh5CgdWj00D1nPoMv5kYGRi+X2Rgw5D/ByTvMvxAM48TrG8fw3ewPicGLmTzuF8yfAXxRXcC1QPlH8Qx8OC0n1IaaJ/iJ4aXID5zAgMDAJndGuUNCmVuZHN0cmVhbQ0KZW5kb2JqDQoNCnN0YXJ0eHJlZg0KOTMzMw0KJSVFT0YNCg=="class="btn" download="Ascah_Chepkwony_CV.pdf">
+                Download CV <i class="fas fa-download"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="section">
+        <div class="section-title">
+            <h2>My Interests</h2>
+        </div>
+        <div class="interests-container">
+            <div class="interest-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>I'm fascinated by the endless possibilities of the web. Creating responsive, accessible, and performant websites is both my profession and passion.</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-robot"></i>
+                <h3>Artificial Intelligence</h3>
+                <p>The potential of AI to transform industries excites me. I enjoy exploring machine learning models and their applications in solving real-world problems.</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>Good design is invisible. I strive to create intuitive user experiences that delight users while solving their problems effectively.</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Development</h3>
+                <p>With the world going mobile, I'm passionate about building apps that make people's lives easier and more connected.</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Science</h3>
+                <p>Turning raw data into meaningful insights is like solving a puzzle. I enjoy the process of analysis, visualization, and storytelling with data.</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>I'm always looking for ways to improve existing solutions or create new ones. Innovation drives progress, and I want to be part of that journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="section-title">
+            <h2>My Projects</h2>
+        </div>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image" 
+                     style="background-image: url(https://res.cloudinary.com/dtmiaphih/image/upload/v1753633622/image_1_s2cofn.png)">
+                </div>
+                <div class="project-info">
+                    <h3>E-Commerce Website</h3>
+                    <p>A fully responsive e-commerce platform with product listings, cart functionality, and secure checkout.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image" 
+                     style="background-image: url(https://res.cloudinary.com/dtmiaphih/image/upload/v1753633620/image_2_te93tt.png)">
+                </div>
+                <div class="project-info">
+                    <h3>Task Management App</h3>
+                    <p>A productivity application for managing tasks with drag-and-drop functionality.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Vue.js</span>
+                        <span class="project-tag">Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>I'm open for new opportunities and would love to hear from you. Whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>chepkwonyascah@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>+44 20 7923 559</p>
+                            <p>+254 700 342 654</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Oxford, England</p>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Asc-Ch"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ascah-a9b664378/"><i class="fab fa-linkedin-in"></i></a>
+                    
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 <b><i> A.Chepkwony</i></b>. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+             <p class="signature">Designed & Built with ❤️ by A.Chepkwony</p>
+        </div>
+    </footer>
+</body>
+</html>
