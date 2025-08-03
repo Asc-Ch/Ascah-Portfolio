@@ -24,17 +24,13 @@ Ascah is a software engineer with 5 years of experience specializing in building
 ## Education
 
 - **Master's Degree** (Expected 2028)  
-  University of Oxford, UK  
-  Field of Study: Computer Science  
-  Specialization: Web Technologies and Software Systems
+   Specialization: Web Technologies and Software Systems
 
 - **Bachelor's Degree** (2015 - 2018)  
-  University of Nairobi  
-  Field of Study: Information Technology  
-  Graduated with First Class Honors
+   Field of Study: Information Technology  
+  
 
 - **High School** (2011 - 2014)  
-  Kenya High School  
   Achievements: KCSE - A plain
 
 ## Interests
@@ -61,8 +57,7 @@ Ascah is a software engineer with 5 years of experience specializing in building
 ## Contact
 
 - **Email:** chepkwonyascah@gmail.com  
-- **Phone:** +44 20 7923 559 / +254 700 342 654  
-- **Locations:** Oxford, England / Nairobi, Kenya  
+  
 
 Connect via:  
 - [GitHub](https://github.com/Asc-Ch)  
